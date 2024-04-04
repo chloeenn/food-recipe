@@ -1,0 +1,22 @@
+.recipe-card{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 3% auto;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    .recipe-content{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.3);
+        h2{
+            text-align: left;
+            font-size: 20px;
+            margin: 15px;
+            color: white;
+        }
+    }
+}
