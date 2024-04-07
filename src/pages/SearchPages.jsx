@@ -1,27 +1,58 @@
-import React, { useState } from 'react';
- 
-const SearchPages = ({ onSearch }) => {
-    const [query, setQuery] = useState('');
+import React, { useState, useEffect } from 'react';
+import RecipeCards from '../components/Cards';
+import RecipeDetails from './recipeDetails';
+import "./SearchPages.scss"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+const SearchPages = () => {
+    const [searchQuery, setSearchQuery] = useState(""); 
+    const [searchResults, setSearchResults] = useState([]); 
+    
+    // useEffect(() => {
+    //     if (searchQuery.trim() !== "") {
+    //         getSearch();
+    //     }
+    // }, [searchQuery]); // Add searchQuery as dependency
 
-    const handleChange = (event) => {
-        setQuery(event.target.value);
+    const getSearch = async () => {
+        try {
+            const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${searchQuery}`);
+            const data = await response.json();
+            console.log(data);
+            setSearchResults(data.results || []);
+        } catch (error) {
+            console.error('Error fetching recipes:', error);
+        } 
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        onSearch(query);
+    const updateSearchQuery = (event) => {
+        setSearchQuery(event.target.value); // Update searchQuery state with the input value
+    };
+
+    const handleSearch = (event) => {
+        event.preventDefault(); // Prevent form submission and page refresh
+        getSearch(searchQuery);
+        setSearchQuery("")
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                value={query}
-                onChange={handleChange}
-                placeholder="Search..."
-            />
-            <button type="submit">Search</button>
-        </form>
+        <div>
+            <div className='search-bar'>
+                <form onSubmit={handleSearch}>
+                    <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={updateSearchQuery}
+                        placeholder="Search..." />
+                    <button type="submit">
+                        <FontAwesomeIcon icon={faSearch} />
+                    </button>
+                </form>
+
+            </div>
+            <RecipeCards recipes={searchResults} />
+        </div>
+
     );
 }
 

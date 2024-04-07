@@ -1,5 +1,7 @@
 import React from "react"
 import "./Cards.scss"
+import { Grid } from "@mui/material";
+
 const Cards = ({ recipe, index }) => {
     return (
         //<div className='recipe-card' key={index} style={{ padding: '10px', margin: '20px', backgroundColor: '#EEEEEE', borderRadius: '10px' }}>
@@ -13,5 +15,15 @@ const Cards = ({ recipe, index }) => {
         </div>
     )
 }
-
-export default Cards;
+const RecipeCards = ({ recipes, index }) => {
+    return (
+        <Grid container spacing={2}>
+            {recipes.map((recipe, index) => (
+                <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+                    <Cards recipe={recipe} index={index} />
+                </Grid>
+            ))}
+        </Grid>
+    );
+};
+export default RecipeCards;

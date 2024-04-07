@@ -4,8 +4,9 @@ import SearchPages from './pages/SearchPages';
 const App = () => {
   return (
     <>
-     <RecipeDetails/>
-     <SearchPages/>
+      <SearchPages />
+      <RecipeDetails />
+
     </>
   )
 }
