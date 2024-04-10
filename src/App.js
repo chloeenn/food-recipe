@@ -6,7 +6,6 @@ const App = () => {
     <>
       <SearchPages />
       <RecipeDetails />
-
     </>
   )
 }

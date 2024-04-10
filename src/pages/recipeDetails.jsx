@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import RecipeCards from "../components/Cards";
 const RecipeDetails = () => {
     const [recipes, setRecipes] = useState([]);
-
-    // useEffect(() => {
-    //     getRecipes();
-    // }, []);
     
     const getRecipes = async () => {
         try {

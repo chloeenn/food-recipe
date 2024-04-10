@@ -5,14 +5,12 @@ import "./SearchPages.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const SearchPages = () => {
-    const [searchQuery, setSearchQuery] = useState(""); 
-    const [searchResults, setSearchResults] = useState([]); 
-    
-    // useEffect(() => {
-    //     if (searchQuery.trim() !== "") {
-    //         getSearch();
-    //     }
-    // }, [searchQuery]); // Add searchQuery as dependency
+    const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+
+    useEffect(() => {
+        getSearch();
+    }, [searchQuery]);
 
     const getSearch = async () => {
         try {
@@ -22,7 +20,7 @@ const SearchPages = () => {
             setSearchResults(data.results || []);
         } catch (error) {
             console.error('Error fetching recipes:', error);
-        } 
+        }
     };
 
     const updateSearchQuery = (event) => {
@@ -50,7 +48,11 @@ const SearchPages = () => {
                 </form>
 
             </div>
-            <RecipeCards recipes={searchResults} />
+            <div claessName='search-result'>
+                <h3>Search Result for {searchQuery}</h3>
+                <RecipeCards recipes={searchResults} />
+            </div>
+
         </div>
 
     );
