@@ -1,10 +1,13 @@
 import React from "react"
 import "./Cards.scss"
 import { Grid } from "@mui/material";
-
+import RecipeInstruction from "../pages/RecipeInstruction"
 const Cards = ({ recipe, index }) => {
+    const handleClick = () => {
+        RecipeInstruction(recipe);
+    }
     return (
-        <div className='recipe-card'>
+        <div className='recipe-card'  onClick={handleClick}>
             <div className='recipe-img'>
                 <img src={recipe.image} alt="Cannot display :(" />
             </div>
@@ -25,4 +28,4 @@ const RecipeCards = ({ recipes, index }) => {
         </Grid>
     );
 };
-export default RecipeCards;
+export default RecipeCards

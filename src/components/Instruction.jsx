@@ -1,6 +1,6 @@
 import React from "react";
 
-const Instructions = ({ingredients, steps}) => {
+const Instruction = ({ingredients, steps}) => {
     return(
         <div>
             <ul>
@@ -17,3 +17,5 @@ const Instructions = ({ingredients, steps}) => {
     )
 
 }
+
+export default Instruction;
