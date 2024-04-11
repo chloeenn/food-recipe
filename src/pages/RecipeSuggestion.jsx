@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RecipeCards from "../components/Cards";
-const RecipeDetails = () => {
+const RecipeSuggestion = () => {
     const [recipes, setRecipes] = useState([]);
     
     const getRecipes = async () => {
@@ -21,4 +21,4 @@ const RecipeDetails = () => {
     );
 }
 
-export default RecipeDetails;
+export default RecipeSuggestion;

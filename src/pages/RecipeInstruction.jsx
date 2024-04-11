@@ -1,8 +1,9 @@
 import React from "react";
 import Instruction from "../components/Instruction"
 const RecipeInstruction = async({ recipe }) => {
-    const data = await (`https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`).json();
-    console.log("Instruction: "+data)
+    const response = await fetch(`https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
+    const data = await response.json();
+    console.log("Instruction: ", data);
     return (
         <div className="recipe-details">
             <div className="title-block">
@@ -11,7 +12,7 @@ const RecipeInstruction = async({ recipe }) => {
                 </div>
             </div>
             <div className="content-block">
-                <Instruction ingredients={ingredients} instructions={instructions} />
+                {/* <Instruction ingredients={ingredients} instructions={instructions} /> */}
             </div>
         </div>
     )

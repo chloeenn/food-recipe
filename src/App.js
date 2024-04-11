@@ -1,11 +1,11 @@
-import RecipeDetails from './pages/recipeDetails';
+import RecipeSuggestion from './pages/RecipeSuggestion';
 import SearchPages from './pages/SearchPages';
 
 const App = () => {
   return (
     <>
       <SearchPages />
-      <RecipeDetails />
+      <RecipeSuggestion />
     </>
   )
 }
