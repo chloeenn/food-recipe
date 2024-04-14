@@ -1,14 +1,20 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 const Instruction = () => {
-    const { recipeID } = useParams(); // Get the recipe ID from URL params
+    const { recipeID } = useParams();
     const [ingredients, setIngredients] = useState([]);
+    const [Instruction, setInstruction] = useState([])
     useEffect(() => {
         const fetchIngredients = async () => {
             try {
-                const response = await fetch(`https://api.spoonacular.com/recipes/${recipeID}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
-                const data = await response.json();
-                setIngredients(data.extendedIngredients || []);
+                const responseIngredients = await fetch(`https://api.spoonacular.com/recipes/${recipeID}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
+                const dataIngredients = await responseIngredients.json();
+                setIngredients(dataIngredients.extendedIngredients || []);
+
+                // const responseInstruction = await fetch(`https://api.spoonacular.com/recipes/${recipeID}/analyzeInstructions?apiKey=${process.env.REACT_APP_API_KEY}`)
+                // const dataInstruction = await responseInstruction.json();
+                // setInstruction(dataInstruction)
             } catch (error) {
                 console.error('Error fetching ingredients:', error);
             }
@@ -16,19 +22,19 @@ const Instruction = () => {
 
         fetchIngredients();
     }, [recipeID]);
-    if(!ingredients){
-        return <div><h3>Loading...</h3></div>
-    }
+
     return (
         <div>
-            <div className="ingredients">
-                <h3></h3>
-                <h3>Ingredients:</h3>
-                <h3>EHEEHEHEHHEHHEEHHEHEHEHEHEHEHE</h3>
-            </div>
+            <h3>Ingredients:</h3>
+            <ul>
+                {ingredients.map((ingredient, index) => (
+                    <li key={index}>
+                        {ingredient.name} - {ingredient.amount} {ingredient.unit}
+                    </li>
+                ))}
+            </ul>
         </div>
-
-    )
-}
+    );
+};
 
 export default Instruction;
