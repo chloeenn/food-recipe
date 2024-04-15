@@ -5,7 +5,7 @@ import Instruction from "../components/Instruction";
 const Pages = () => {
   return (
     <Routes>
-      <Route path="/recipes/:recipeID" element={<Instruction />} />
+      <Route path="/instruction/:recipeID" element={<Instruction />} />
     </Routes>
   );
 };

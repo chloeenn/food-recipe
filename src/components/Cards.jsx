@@ -3,7 +3,6 @@ import "./Cards.scss"
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Instruction"
-// import Cards from "./Cards"
 const Cards = ({ recipe, index }) => {
     return (
         <div className='recipe-card'>
@@ -21,9 +20,7 @@ const RecipeCards = ({ recipes, index }) => {
         <Grid container spacing={2}>
             {recipes.map((recipe, index) => (
                 <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-                    {/* {console.log(`Recipe: ${recipe.title} ID: ${recipe.id}`)} */}
-                    <Link to={`/recipes/${recipe.id}`}>
-                        <h3>ETTETET</h3>
+                    <Link to={`/instruction/${recipe.id}`}>
                         <Cards recipe={recipe} index={index} />
                     </Link>
                 </Grid>
