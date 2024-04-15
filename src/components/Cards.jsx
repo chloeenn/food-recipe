@@ -1,7 +1,8 @@
 import React from "react"
 import "./Cards.scss"
 import { Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+// import { Link, useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import "./Instruction"
 const Cards = ({ recipe, index }) => {
     return (
@@ -16,13 +17,22 @@ const Cards = ({ recipe, index }) => {
     )
 }
 const RecipeCards = ({ recipes, index }) => {
+    const navigate = useNavigate(); 
+
+    const handleCardClick = (recipeID) => {
+        navigate(`/instruction/${recipeID}`); 
+    };
     return (
         <Grid container spacing={2}>
             {recipes.map((recipe, index) => (
                 <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-                    <Link to={`/instruction/${recipe.id}`}>
+                    {/* <Link to={`/instruction/${recipe.id}`}>
                         <Cards recipe={recipe} index={index} />
                     </Link>
+                     */}
+                      <div onClick={() => handleCardClick(recipe.id)}>
+                        <Cards recipe={recipe} index={index} />
+                    </div>
                 </Grid>
             ))}
         </Grid>
