@@ -19,7 +19,6 @@ const SearchPages = () => {
             const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${searchQuery}&number=4`);
             const data = await response.json();
             console.log(data);
-            console.log("SEARCHPAGES")
             setSearchResults(data.results || []);
         } catch (error) {
             console.error('Error fetching recipes:', error);
@@ -37,7 +36,7 @@ const SearchPages = () => {
 
     };
     return (
-        <div>
+        <div className="search-page">
             <div className='search-bar'>
                 <form onSubmit={event => {
                     event.preventDefault(); // Prevent form submission and page refresh

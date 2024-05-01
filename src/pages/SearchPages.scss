@@ -1,3 +1,8 @@
+.search-page{
+    margin: 1rem;
+}
+
+
 .search-bar {
     position: relative;
     margin: 20px auto;
@@ -58,4 +63,10 @@
 
 .search-bar button svg:hover {
     background-color: #f1c40f;
+}
+
+.search-result{
+    h3{
+        margin: 1rem;
+    }
 }

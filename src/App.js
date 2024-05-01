@@ -3,12 +3,14 @@ import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRou
 import RecipeSuggestion from './pages/Suggestion';
 import SearchPages from './pages/SearchPages';
 import Pages from "./pages/Pages";
-
+import NavBar from "./components/NavBar";
+import Home from "./pages/Home";
 const App = () => {
   return (
     <Router> 
-      <RecipeSuggestion />
-      <SearchPages />
+      <NavBar/>
+      {/* <Home/> */}
+      {/* <SearchPages /> */}
       <Pages />
     </Router>
   );

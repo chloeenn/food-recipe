@@ -1,8 +1,9 @@
 import React from "react"
-import "./Cards.scss"
+// import "./Cards.scss"
 import { Grid } from "@mui/material";
 import { Link } from 'react-router-dom';
 import "./Instruction"
+import "../index.css"
 
 const RecipeCards = ({ recipes, index }) => {
   console.log(`card: ${recipes}`)
