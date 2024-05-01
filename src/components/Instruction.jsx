@@ -5,7 +5,8 @@ const Instruction = () => {
     const { recipeID } = useParams();
     const [ingredients, setIngredients] = useState([]);
     const [instructions, setInstructions] = useState([]);
-
+   
+  console.log("Recipe ID:", recipeID);
     useEffect(() => {
         const fetchRecipeData = async () => {
             try {

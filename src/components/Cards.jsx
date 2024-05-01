@@ -1,41 +1,29 @@
 import React from "react"
 import "./Cards.scss"
 import { Grid } from "@mui/material";
-// import { Link, useHistory } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Instruction"
-const Cards = ({ recipe, index }) => {
-    return (
-        <div className='recipe-card'>
-            <div className='recipe-img'>
-                <img src={recipe.image} alt="Cannot display :(" />
-            </div>
-            <div className='recipe-content'>
-                <h2>{recipe.title}</h2>
-            </div>
-        </div>
-    )
-}
-const RecipeCards = ({ recipes, index }) => {
-    const navigate = useNavigate(); 
 
-    const handleCardClick = (recipeID) => {
-        navigate(`/instruction/${recipeID}`); 
-    };
-    return (
-        <Grid container spacing={2}>
-            {recipes.map((recipe, index) => (
-                <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-                    {/* <Link to={`/instruction/${recipe.id}`}>
-                        <Cards recipe={recipe} index={index} />
-                    </Link>
-                     */}
-                      <div onClick={() => handleCardClick(recipe.id)}>
-                        <Cards recipe={recipe} index={index} />
-                    </div>
-                </Grid>
-            ))}
+const RecipeCards = ({ recipes, index }) => {
+  console.log(`card: ${recipes}`)
+  return (
+    <Grid container spacing={2}>
+      {recipes.map((recipe, index) => (
+        <Grid item key={recipe.id} xs={12} sm={6} md={4} lg={3}>
+          <Link to={`/instruction/${recipe.id}`}>
+            <div className='recipe-card'>
+              <div className='recipe-img'>
+                <img src={recipe.image} alt="Cannot display :(" />
+              </div>
+              <div className='recipe-content'>
+                <h2>{recipe.title}</h2>
+              </div>
+            </div>
+          </Link>
         </Grid>
-    );
+      ))}
+    </Grid>
+  );
 };
+
 export default RecipeCards;

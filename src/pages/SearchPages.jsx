@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import RecipeCards from '../components/Cards';
+import "../components/Cards.scss"
+import { Grid } from "@mui/material";
+import { Link, useNavigate } from 'react-router-dom';
 import "./SearchPages.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -13,9 +16,10 @@ const SearchPages = () => {
 
     const getSearch = async () => {
         try {
-            const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${searchQuery}`);
+            const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${searchQuery}&number=4`);
             const data = await response.json();
             console.log(data);
+            console.log("SEARCHPAGES")
             setSearchResults(data.results || []);
         } catch (error) {
             console.error('Error fetching recipes:', error);
@@ -29,19 +33,22 @@ const SearchPages = () => {
     const handleSearch = (event) => {
         event.preventDefault(); // Prevent form submission and page refresh
         getSearch(searchQuery);
-        setSearchQuery("")
-    };
+        setSearchQuery("");
 
+    };
     return (
         <div>
             <div className='search-bar'>
-                <form onSubmit={handleSearch}>
+                <form onSubmit={event => {
+                    event.preventDefault(); // Prevent form submission and page refresh
+                    getSearch();
+                }}>
                     <input
                         type="text"
                         value={searchQuery}
                         onChange={updateSearchQuery}
                         placeholder="Search..." />
-                    <button type="submit">
+                    <button type="submit" >
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
                 </form>
@@ -49,7 +56,10 @@ const SearchPages = () => {
             </div>
             <div className='search-result'>
                 <h3>Search Result for {searchQuery}</h3>
-                <RecipeCards recipes={searchResults} />
+                <Link to={`/recipe/${searchResults.id}`}>
+                    <RecipeCards recipes={searchResults} />
+                </Link>
+
             </div>
 
         </div>
