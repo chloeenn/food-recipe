@@ -27,15 +27,6 @@ const RecipeSuggestion = () => {
                 <Cards recipes={recipes}/>
             </Link>
         </div>
-        // <Grid container spacing={2}>
-        //     {recipes.map((recipe, index) => ( // Changed variable name to 'recipe'
-        //         <Grid item key={index} xs={12} sm={6} md={4} lg={3} >
-        //             <Link to={`/instruction/${recipe.id}`}>
-        //                 <Cards recipe={recipe} index={index} />
-        //             </Link>
-        //         </Grid>
-        //     ))}
-        // </Grid>
     );
 }
 

@@ -13,6 +13,7 @@ const Pages = () => {
     <AnimatePresence mode="wait">
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/search/:searchQuery" element={<SearchPage/>}/>
         <Route path="/instruction/:recipeID" element={<InstructionPage />} />
         <Route path="/card" element={<RecipeCards />} />
       </Routes>

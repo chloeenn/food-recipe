@@ -1,5 +1,5 @@
 import React from "react"
-// import "./Cards.scss"
+import "./Cards.scss"
 import { Grid } from "@mui/material";
 import { Link } from 'react-router-dom';
 import "./Instruction"

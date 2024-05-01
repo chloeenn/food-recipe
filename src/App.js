@@ -4,11 +4,13 @@ import RecipeSuggestion from './pages/Suggestion';
 import SearchPages from './pages/SearchPages';
 import Pages from "./pages/Pages";
 import NavBar from "./components/NavBar";
+import SearchBar from "./components/SearchBar"
 import Home from "./pages/Home";
 const App = () => {
   return (
     <Router> 
       <NavBar/>
+      <SearchBar/>
       {/* <Home/> */}
       {/* <SearchPages /> */}
       <Pages />
