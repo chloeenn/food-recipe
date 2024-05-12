@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import RecipeCards from '../components/Cards';
 import "../components/Cards.scss"
-import { Grid } from "@mui/material";
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "./SearchPages.scss"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const SearchPages = () => {
     const { searchQuery } = useParams();
     const [searchResults, setSearchResults] = useState([]);

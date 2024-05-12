@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../components/Cards";
-import { Grid } from "@mui/material";
 import { Link } from 'react-router-dom';
 
 const RecipeSuggestion = () => {

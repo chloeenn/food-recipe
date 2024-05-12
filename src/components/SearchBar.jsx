@@ -11,12 +11,6 @@ const SearchBar = () => {
         setSearchQuery(event.target.value); // Update searchQuery state with the input value
     };
 
-    const handleSearch = (event) => {
-        event.preventDefault(); // Prevent form submission and page refresh
-        navigate(`/search/${searchQuery}`); // Use navigate to go to the search results page
-        setSearchQuery(""); // Clear search query after navigation
-    };
-
     return (
         <div className="search-page">
             <div className='search-bar'>
