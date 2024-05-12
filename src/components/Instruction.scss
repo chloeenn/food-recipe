@@ -6,39 +6,30 @@
     -moz-osx-font-smoothing: grayscale;
     font-weight: medium;
 }
-.ins {
-    padding: 32px;
-}
 
-
-
-.ins-ingredient,
-.ins-instruction {
-    margin: 10px;
-    li{
-        list-style-type: circle;
-    }
-    .ins-instruction::first-letter {
-        text-transform: capitalize;
-    }
-}
-
-hr {
-    display: block;
-    height: 2px;
-    border: 0;
-    border-top: 2px solid black;
-    margin: 1em 0;
-}
-
-.ins-overview {
+.ins-overview{
+    display: flex;
+    flex-direction: column;
+    // margin-bottom: 20px;
     width: 100%;
-    overflow: auto;
+}
+.ins-detail{
+    width: 100%;
+}
+.ins-overview::after {
+    content: "";
+    flex-grow: 1; /* Allow the children to grow to fill the container */
 }
 
 .ins-img {
+    position: relative;
     float: left;
     width: 50%;
+    display: flex;
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
 .ins-info {
@@ -47,9 +38,83 @@ hr {
     font-size: 18px;
     font-weight: 400;
     padding: 10px;
-
+    display: flex; /* Add flexbox */
+    flex-direction: column;
+    h1{
+        margin-top: 0;
+    }
     p {
-        margin: 10px;
+        padding: 10px 0;
+    }
+}
+
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px solid black;
+    margin: 2rem 0;
+}
+
+
+.ins {
+    padding: 32px;
+}
+
+ol,
+li {
+    list-style-position: inside;
+    margin: 1.3rem 0;
+    font-size: 18px;
+    
+}
+//Step counter @Directions
+ol {
+    counter-reset: step-counter;
+    list-style-type: none;
+}
+
+ol li::before {
+    counter-increment: step-counter;
+    content: "Step " counter(step-counter) ": ";
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: block;
+    margin: 0.4rem 0;
+}
+
+li::marker {
+    color: #f1c40f;
+}
+
+ul {
+    margin-bottom: 2.5rem;
+}
+
+.ins-heading {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.ins-ingredient,
+.ins-instruction {
+    li {
+        list-style-type: circle;
     }
 
+    .ins-instruction::first-letter {
+        text-transform: capitalize;
+    }
+}
+
+.ins-overview {
+    width: 100%;
+    overflow: auto;
+}
+
+
+@media (min-width: 768px) {
+    .ins-overview {
+        flex-direction: row;
+    }
 }

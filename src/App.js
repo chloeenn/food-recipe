@@ -8,12 +8,13 @@ import SearchBar from "./components/SearchBar"
 import Home from "./pages/Home";
 const App = () => {
   return (
-    <Router> 
-      <NavBar/>
-      <SearchBar/>
-      {/* <Home/> */}
-      {/* <SearchPages /> */}
-      <Pages />
+    <Router>
+      <NavBar />
+      <div className="content">
+        <SearchBar />
+        <Pages />
+      </div>
+
     </Router>
   );
 }

@@ -11,7 +11,7 @@ const RecipeSuggestion = () => {
 
     const getRecipes = async () => {
         try {
-            const response = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`);
+            const response = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10&cuisine=japanese`);
             const data = await response.json();
             console.log("Suggestion: ", data);
             setRecipes(data.recipes || []);

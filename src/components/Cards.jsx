@@ -14,10 +14,10 @@ const RecipeCards = ({ recipes, index }) => {
           <Link to={`/instruction/${recipe.id}`}>
             <div className='recipe-card'>
               <div className='recipe-img'>
-                <img src={recipe.image} alt="Cannot display :(" />
+                <img src={recipe.image ? recipe.image: '../../assets/photo/japanese-egg.jpg'} alt="Cannot display :(" />
               </div>
               <div className='recipe-content'>
-                <h2>{recipe.title}</h2>
+                <h2>{recipe.title ? recipe.title: "Tamagoyaki"}</h2>
               </div>
             </div>
           </Link>
