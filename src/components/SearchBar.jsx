@@ -5,17 +5,17 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState("");
-    const navigate = useNavigate(); // Import useNavigate hook
+    const navigate = useNavigate(); 
 
     const updateSearchQuery = (event) => {
-        setSearchQuery(event.target.value); // Update searchQuery state with the input value
+        setSearchQuery(event.target.value); 
     };
 
     return (
         <div className="search-page">
             <div className='search-bar'>
                  <form onSubmit={event => {
-                    event.preventDefault(); // Prevent form submission and page refresh
+                    event.preventDefault();
                     navigate(`/search/${searchQuery}`);
                     setSearchQuery("");
                 }}>

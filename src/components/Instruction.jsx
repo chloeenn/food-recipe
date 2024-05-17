@@ -4,7 +4,6 @@ import "./Instruction.scss"
 import dishImage from "../assets/photo/omelet.jpg";
 const Instruction = () => {
     const { recipeID } = useParams();
-    // const [ingredients, setIngredients] = useState([]);
     const [instructions, setInstructions] = useState([]);
     const [dishInfo, setDishInfo] = useState("");
     useEffect(() => {

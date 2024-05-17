@@ -23,20 +23,22 @@
 .ins-img {
     position: relative;
     float: left;
-    width: 50%;
+    width: 40%;
     display: flex;
     img{
         width: 100%;
+        max-height: 300px;
         object-fit: cover;
     }
 }
 
 .ins-info {
     float: right;
-    width: 50%;
+    width: 60%;
     font-size: 18px;
     font-weight: 400;
     padding: 10px;
+    padding-left: 20px;
     display: flex; /* Add flexbox */
     flex-direction: column;
     p {
