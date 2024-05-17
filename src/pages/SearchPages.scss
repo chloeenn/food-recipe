@@ -1,10 +1,13 @@
 .search-page{
-    margin: 1rem;
+    padding: 10px;
+    h3{
+        padding: 1.3rem;
+    }
 }
 
 .search-bar {
     position: relative;
-    margin: 20px auto;
+    margin: 0 auto;
     width: 600px;
 }
 
@@ -17,7 +20,7 @@
     height: 65px;
     padding: 10px 20px;
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
     background-color: #f5f5f5;
     font-size: 20px;
     color: #333;
@@ -28,7 +31,7 @@
 
 .search-bar input:focus {
     background-color: #fff;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 1 0 0 rgba(0, 0, 0, 0.2);
 }
 
 .search-bar button {
@@ -37,9 +40,9 @@
     right: 0;
     width: 65px;
     height: 65px;
-    background-color: #333;
+    background-color:  #f1c40f;
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
     outline: none;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -48,7 +51,7 @@
 
 .search-bar button:hover {
     transform: scale(1.1);
-    background-color: #f1c40f;
+    background-color: #ff9900;
 }
 
 .search-bar button svg {
@@ -57,15 +60,5 @@
     line-height: 75px;
     text-align: center;
     transition: all 0.3s ease;
-    ;
 }
 
-.search-bar button svg:hover {
-    background-color: #f1c40f;
-}
-
-.search-result{
-    h3{
-        margin: 1rem;
-    }
-}

@@ -10,7 +10,6 @@
 .ins-overview{
     display: flex;
     flex-direction: column;
-    // margin-bottom: 20px;
     width: 100%;
 }
 .ins-detail{
@@ -40,9 +39,6 @@
     padding: 10px;
     display: flex; /* Add flexbox */
     flex-direction: column;
-    h1{
-        margin-top: 0;
-    }
     p {
         padding: 10px 0;
     }
@@ -52,8 +48,8 @@ hr {
     display: block;
     height: 2px;
     border: 0;
-    border-top: 2px solid black;
     margin: 2rem 0;
+    border-top: 2px solid #f1c40f;
 }
 
 
@@ -66,7 +62,6 @@ li {
     list-style-position: inside;
     margin: 1.3rem 0;
     font-size: 18px;
-    
 }
 //Step counter @Directions
 ol {
@@ -77,10 +72,8 @@ ol {
 ol li::before {
     counter-increment: step-counter;
     content: "Step " counter(step-counter) ": ";
-    font-weight: 700;
-    font-size: 1.05rem;
-    display: block;
-    margin: 0.4rem 0;
+    display: block; 
+    font-weight: bold; 
 }
 
 li::marker {

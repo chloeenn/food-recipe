@@ -22,8 +22,8 @@ const SearchPages = () => {
     };
 
     return (
-        <div>
-            <h3>Search Result for: {searchQuery}</h3>
+        <div className='search-page'>
+            <h3>Search Results For: {searchQuery}</h3>
             <Link to={`/instruction/${searchResults}`}>
                 <RecipeCards recipes={searchResults} />
             </Link>

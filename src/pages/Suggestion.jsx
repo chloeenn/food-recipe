@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../components/Cards";
 import { Link } from 'react-router-dom';
-
+import "../index.css"
 const RecipeSuggestion = () => {
     const [recipes, setRecipes] = useState([]);
 
@@ -23,7 +23,10 @@ const RecipeSuggestion = () => {
     return (
         <div>
             <Link to={`/instruction/${recipes.id}`}>
-                <Cards recipes={recipes}/>
+                <div className="suggestion">
+                    <Cards recipes={recipes} />
+                </div>
+
             </Link>
         </div>
     );

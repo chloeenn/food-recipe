@@ -37,7 +37,7 @@ const Instruction = () => {
                 <img src={dishInfo.image || dishImage} alt={dishInfo.title || "Default dish"}/>
                 </div>
                 <div className="ins-info">
-                    <h1 >{dishInfo.title ? dishInfo.title : "Japanese-Style Rolled Omelet"}</h1>
+                    <h2>{dishInfo.title ? dishInfo.title : "Japanese-Style Rolled Omelet"}</h2>
                     <p>Servings: {dishInfo.servings}</p>
                     <p>Total Time: {dishInfo.readyInMinutes}</p>
                     <p>Health Score: {dishInfo.healthScore}</p>
