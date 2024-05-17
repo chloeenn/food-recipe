@@ -33,10 +33,10 @@ const Instruction = () => {
         <div className="ins">
             <div className="ins-overview">
                 <div className="ins-img">
-                <img src={dishInfo.image || dishImage} alt={dishInfo.title || "Default dish"}/>
+                <img src={dishInfo.image} alt={dishInfo.title || "Default dish"}/>
                 </div>
                 <div className="ins-info">
-                    <h2>{dishInfo.title ? dishInfo.title : "Japanese-Style Rolled Omelet"}</h2>
+                    <h2>{dishInfo.title ? dishInfo.title : "Dish Title"}</h2>
                     <p>Servings: {dishInfo.servings}</p>
                     <p>Total Time: {dishInfo.readyInMinutes}</p>
                     <p>Health Score: {dishInfo.healthScore}</p>
