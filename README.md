@@ -1,5 +1,5 @@
 # Recipe Search
-
+### Live Demo: https://food-recipe-git-main-chloeenns-projects.vercel.app/
 ### Nom Nom 
 
 Nom Nom is a recipe searching website that allows users to find and view recipes. This website uses Food API and Recipe API from [Spoonacular](https://spoonacular.com), built with React, JavaScript, and SCSS.
